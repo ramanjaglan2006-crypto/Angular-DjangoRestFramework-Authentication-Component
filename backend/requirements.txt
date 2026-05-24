@@ -1,0 +1,22 @@
+Django>=3.1.6,<4.0
+djangorestframework>=3.12.2
+djangorestframework-simplejwt>=4.7.1
+django-cors-headers>=3.7.0
+django-rest-passwordreset>=1.2.0
+python-decouple>=3.4
+requests>=2.25.1
+PyJWT>=2.1.0
+
+# Oauth
+django-oauth-toolkit>=1.5.0
+social-auth-app-django>=4.0.0
+social-auth-core>=4.1.0
+drf-social-oauth2>=1.0.9
+
+# Production
+gunicorn>=20.1.0
+psycopg2-binary>=2.8.6
+
+# Development & Testing
+pytest-django>=4.1.0
+pre-commit>=2.12.1
