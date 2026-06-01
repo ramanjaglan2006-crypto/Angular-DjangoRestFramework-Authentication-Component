@@ -1,0 +1,26 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light" [containerInside]="true">
+	<mdb-navbar-brand>
+		<a class="navbar-brand" routerLink="home">
+			<img src="https://nolan-web-profile.s3.amazonaws.com/static/images/nksimple.png" loading="lazy" loading="lazy">
+		</a>
+	</mdb-navbar-brand>
+  
+	<links>
+		<ul class="navbar-nav ml-auto">
+			<ng-container *ngIf="authorized; else elseTemplate">
+				<li class="nav-item">
+					<a class="nav-link waves-light" routerLink="profile" mdbWavesEffect><mdb-icon fas icon="user-secret"></mdb-icon> <strong>{{username}}</strong></a>
+				</li>
+			</ng-container>
+			<ng-template #elseTemplate>
+				<li class="nav-item">
+					<a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="user-secret"></mdb-icon> <strong>Anonymous</strong></a>
+				</li>
+			</ng-template>
+			<li class="nav-item" *ngIf="authorized">
+				<a class="nav-link waves-light ml-4" routerLink="authentication" mdbWavesEffect (click)="signout()"><mdb-icon fas icon="sign-out-alt"></mdb-icon>&nbsp;&nbsp;Sign out</a>
+			</li>
+		</ul>
+	</links>
+</mdb-navbar>
